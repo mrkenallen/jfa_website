@@ -77,7 +77,8 @@
         "googleplay": "https://play.google.com/store/books/details/Bernard_S_Cohn_Colonialism_and_Its_Forms_of_Knowle?id=QU0gEAAAQBAJ",
         "kobo": "https://www.kobo.com/us/en/ebook/colonialism-and-its-forms-of-knowledge",
         "ebookscom": "https://www.ebooks.com/en-us/book/210234005/colonialism-and-its-forms-of-knowledge/bernard-s-cohn/",
-        "bookshop": "https://bookshop.org/p/books/colonialism-and-its-forms-of-knowledge-the-british-in-india-bernard-s-cohn/b748c40de2256f91?ean=9781400844326"
+        "bookshop": "https://bookshop.org/p/books/colonialism-and-its-forms-of-knowledge-the-british-in-india-bernard-s-cohn/b748c40de2256f91?ean=9781400844326",
+        "worldcat": "https://search.worldcat.org/title/1312726008"
       },
       "skipStores": [
         "smashwords"
