@@ -1,0 +1,259 @@
+{
+  "episodes": [
+    {
+      "number": 1,
+      "title": "The Good Samaritan",
+      "status": "coming"
+    }
+  ],
+  "books": [
+    {
+      "id": "levine-short-stories",
+      "title": "Short Stories by Jesus",
+      "subtitle": "The Enigmatic Parables of a Controversial Rabbi",
+      "author": "Amy-Jill Levine",
+      "publisher": "HarperOne",
+      "place": "New York",
+      "year": 2015,
+      "firstPublished": 2014,
+      "isbn13": "9780061561030",
+      "summary": "Levine, a Jewish New Testament scholar, reads the parables in their first-century Jewish setting rather than through later Christian allegory.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Levine, Amy-Jill"
+    },
+    {
+      "id": "levine-misunderstood-jew",
+      "title": "The Misunderstood Jew",
+      "subtitle": "The Church and the Scandal of the Jewish Jesus",
+      "author": "Amy-Jill Levine",
+      "publisher": "HarperOne",
+      "place": "San Francisco",
+      "year": 2007,
+      "isbn13": "9780061137785",
+      "summary": "Argues that Christian readings of Jesus often distort the Judaism he lived in, and corrects common misconceptions about first-century Jewish life.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Levine, Amy-Jill"
+    },
+    {
+      "id": "evans-luke",
+      "title": "Luke",
+      "subtitle": "New International Biblical Commentary",
+      "author": "Craig A. Evans",
+      "publisher": "Hendrickson",
+      "place": "Peabody, MA",
+      "year": 1990,
+      "isbn13": "9780943575315",
+      "summary": "A verse-by-verse commentary on the Gospel of Luke for general readers and students.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Evans, Craig A."
+    },
+    {
+      "id": "placher-narratives",
+      "title": "Narratives of a Vulnerable God",
+      "subtitle": "Christ, Theology, and Scripture",
+      "author": "William C. Placher",
+      "publisher": "Westminster John Knox Press",
+      "place": "Louisville",
+      "year": 1994,
+      "isbn13": "9780664255343",
+      "summary": "A theological study of how the Gospel narratives portray Christ and what that implies for how Christians understand God.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Placher, William C."
+    },
+    {
+      "id": "crossan-power-of-parable",
+      "title": "The Power of Parable",
+      "subtitle": "How Fiction by Jesus Became Fiction about Jesus",
+      "author": "John Dominic Crossan",
+      "publisher": "HarperOne",
+      "place": "New York",
+      "year": 2013,
+      "firstPublished": 2012,
+      "isbn13": "9780061875700",
+      "summary": "Examines the parables as fiction told by Jesus and traces how the Gospel writers then turned them into fiction about him.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Crossan, John Dominic"
+    },
+    {
+      "id": "crossan-revolutionary-biography",
+      "title": "Jesus",
+      "subtitle": "A Revolutionary Biography",
+      "author": "John Dominic Crossan",
+      "publisher": "HarperOne",
+      "year": 2009,
+      "firstPublished": 1994,
+      "isbn13": "9780061800351",
+      "summary": "A historical reconstruction of Jesus's life and teaching, drawing on social-scientific study of first-century Mediterranean society.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Crossan, John Dominic"
+    },
+    {
+      "id": "vermes-jesus-the-jew",
+      "title": "Jesus the Jew",
+      "subtitle": "A Historian's Reading of the Gospels",
+      "author": "Geza Vermes",
+      "publisher": "Fortress Press",
+      "place": "Philadelphia",
+      "year": 1981,
+      "firstPublished": 1973,
+      "isbn13": "9780800614430",
+      "summary": "Places Jesus within the charismatic Judaism of first-century Galilee, reading the Gospels as a historian of Judaism.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Vermes, Geza"
+    },
+    {
+      "id": "ehrman-apocalyptic-prophet",
+      "title": "Jesus",
+      "subtitle": "Apocalyptic Prophet of the New Millennium",
+      "author": "Bart D. Ehrman",
+      "publisher": "Oxford University Press",
+      "year": 2001,
+      "firstPublished": 1999,
+      "isbn13": "9780195124743",
+      "summary": "Presents Jesus as a Jewish apocalyptic preacher who expected God to intervene in history within his own generation.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Ehrman, Bart D."
+    },
+    {
+      "id": "borg-meeting-jesus",
+      "title": "Meeting Jesus Again for the First Time",
+      "subtitle": "The Historical Jesus and the Heart of Contemporary Faith",
+      "author": "Marcus J. Borg",
+      "publisher": "HarperOne",
+      "year": 1995,
+      "firstPublished": 1994,
+      "isbn13": "9780060609177",
+      "summary": "Contrasts the historical Jesus with the Jesus of traditional Christian belief and explores what that distinction means for faith today.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Borg, Marcus J."
+    },
+    {
+      "id": "haidt-righteous-mind",
+      "title": "The Righteous Mind",
+      "subtitle": "Why Good People Are Divided by Politics and Religion",
+      "author": "Jonathan Haidt",
+      "publisher": "Vintage Books",
+      "place": "New York",
+      "year": 2013,
+      "firstPublished": 2012,
+      "isbn13": "9780307455772",
+      "summary": "Argues that moral judgments come mainly from fast intuition, with reasoning mostly justifying them afterward, and uses moral psychology to explain why people divide over politics and religion.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Haidt, Jonathan"
+    },
+    {
+      "id": "arendt-origins",
+      "title": "The Origins of Totalitarianism",
+      "author": "Hannah Arendt",
+      "publisher": "Harcourt Brace Jovanovich",
+      "place": "New York",
+      "year": 1973,
+      "firstPublished": 1951,
+      "isbn13": "9780156701532",
+      "summary": "Traces how antisemitism, imperialism, and the decline of the nation-state prepared the ground for Nazi and Stalinist rule.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Arendt, Hannah"
+    },
+    {
+      "id": "klein-shock-doctrine",
+      "title": "The Shock Doctrine",
+      "subtitle": "The Rise of Disaster Capitalism",
+      "author": "Naomi Klein",
+      "publisher": "Picador",
+      "place": "New York",
+      "year": 2008,
+      "firstPublished": 2007,
+      "isbn13": "9780312427993",
+      "summary": "Contends that free-market reforms have repeatedly been pushed through in the aftermath of wars, coups, and disasters, while the public is disoriented.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Klein, Naomi"
+    },
+    {
+      "id": "caute-great-fear",
+      "title": "The Great Fear",
+      "subtitle": "The Anti-Communist Purge Under Truman and Eisenhower",
+      "author": "David Caute",
+      "publisher": "Simon & Schuster",
+      "place": "New York",
+      "year": 1979,
+      "firstPublished": 1978,
+      "isbn13": "9780671248482",
+      "summary": "A detailed history of the postwar campaign against suspected Communists: loyalty programs, congressional investigations, trials, and blacklists.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Caute, David"
+    },
+    {
+      "id": "bacevich-limits-of-power",
+      "title": "The Limits of Power",
+      "subtitle": "The End of American Exceptionalism",
+      "author": "Andrew J. Bacevich",
+      "publisher": "Metropolitan Books / Henry Holt",
+      "place": "New York",
+      "year": 2009,
+      "firstPublished": 2008,
+      "isbn13": "9780805090161",
+      "summary": "Argues that American overreach and political dysfunction have outrun the country's means, and that a more restrained foreign policy is needed.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Bacevich, Andrew J."
+    },
+    {
+      "id": "frank-matter-with-kansas",
+      "title": "What's the Matter with Kansas?",
+      "subtitle": "How Conservatives Won the Heart of America",
+      "author": "Thomas Frank",
+      "publisher": "Henry Holt",
+      "year": 2005,
+      "firstPublished": 2004,
+      "isbn13": "9780805077742",
+      "summary": "Examines why many working-class Kansans vote Republican against their economic interests, arguing that cultural grievance has displaced economic politics.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Frank, Thomas"
+    },
+    {
+      "id": "reich-the-system",
+      "title": "The System",
+      "subtitle": "Who Rigged It, How We Fix It",
+      "author": "Robert B. Reich",
+      "publisher": "Vintage Books",
+      "place": "New York",
+      "year": 2021,
+      "firstPublished": 2020,
+      "isbn13": "9780593082003",
+      "summary": "Contends that concentrated corporate wealth has captured American politics and rewritten economic rules in its favor, and proposes reforms.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Reich, Robert B."
+    }
+  ]
+}

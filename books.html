@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookshelf — Jesus for Atheists</title>
+  <meta name="description" content="Every book behind a Jesus for Atheists episode: the scholars, the histories, and where to find them." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0c0b09;
+      --bg2:       #121009;
+      --bg3:       #1a1710;
+      --cream:     #ede8dc;
+      --cream-mid: #c8c0b0;
+      --cream-dim: #8a8070;
+      --gold:      #c8a245;
+      --gold-hi:   #dbb860;
+      --gold-dim:  #7a5e20;
+      --rule:      #2a2618;
+      --serif:     'Playfair Display', Georgia, serif;
+      --body:      'Lora', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--cream);
+      font-family: var(--body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.025'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    a { color: inherit; }
+    .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── TOP BAR ── */
+    .topbar { border-bottom: 1px solid var(--rule); padding: 1.1rem 0; }
+    .topbar .container { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+    .brand { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; text-decoration: none; color: var(--cream); }
+    .brand em { color: var(--gold); font-style: italic; }
+    .back { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; }
+    .back:hover { color: var(--gold-hi); }
+
+    /* ── HEADER ── */
+    .page-head { padding: 4rem 0 2rem; }
+    .eyebrow { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    h1 { font-family: var(--serif); font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 1.25rem; }
+    h1 em { color: var(--gold); font-style: italic; font-weight: 400; }
+    .lede { color: var(--cream-mid); font-size: 1rem; max-width: 600px; }
+
+    /* ── CONTROLS ── */
+    .controls { position: sticky; top: 0; z-index: 20; background: rgba(12,11,9,0.94); backdrop-filter: blur(6px); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 0.9rem 0; }
+    .chips { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.15rem; scrollbar-width: none; }
+    .chips::-webkit-scrollbar { display: none; }
+    .chip { flex: 0 0 auto; background: transparent; border: 1px solid var(--rule); color: var(--cream-mid); font-family: var(--body); font-size: 0.78rem; padding: 0.45rem 0.9rem; cursor: pointer; white-space: nowrap; transition: border-color .2s, color .2s, background .2s; }
+    .chip:hover { border-color: var(--gold-dim); color: var(--cream); }
+    .chip[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--bg); font-weight: 500; }
+    .search { margin-top: 0.7rem; }
+    .search input { width: 100%; background: var(--bg3); border: 1px solid var(--rule); color: var(--cream); font-family: var(--body); font-size: 0.95rem; padding: 0.7rem 1rem; outline: none; }
+    .search input::placeholder { color: #5a5242; }
+    .search input:focus { border-color: var(--gold-dim); }
+
+    /* ── DISCLOSURE ── */
+    .disclosure { display: none; margin: 1.5rem 0 0; padding: 0.9rem 1.1rem; border-left: 2px solid var(--gold-dim); background: rgba(200,162,69,0.04); font-size: 0.8rem; color: var(--cream-dim); line-height: 1.65; }
+
+    /* ── EPISODE NOTE ── */
+    .ep-note { margin: 1.75rem 0 0; font-family: var(--serif); font-style: italic; color: var(--cream-mid); font-size: 1.02rem; }
+    .count { margin: 1.75rem 0 0.25rem; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream-dim); }
+
+    /* ── BOOK LIST ── */
+    .list { padding: 0.5rem 0 4rem; }
+    .book { display: grid; grid-template-columns: 84px 1fr; gap: 1.25rem; padding: 1.9rem 0; border-bottom: 1px solid var(--rule); }
+    .cover { width: 84px; height: 126px; background: var(--bg3); border: 1px solid var(--rule); object-fit: cover; display: block; }
+    .cover.ph { display: flex; align-items: center; justify-content: center; text-align: center; padding: 0.5rem; font-family: var(--serif); font-size: 0.72rem; line-height: 1.25; color: var(--cream-dim); }
+    .book h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; line-height: 1.25; color: var(--cream); }
+    .book .sub { font-family: var(--serif); font-style: italic; color: var(--cream-mid); font-size: 0.95rem; line-height: 1.35; margin-top: 0.15rem; }
+    .byline { margin-top: 0.4rem; font-size: 0.9rem; color: var(--gold-hi); }
+    .imprint { font-size: 0.8rem; color: var(--cream-dim); margin-top: 0.1rem; }
+    .summary { margin-top: 0.7rem; font-size: 0.93rem; color: var(--cream-mid); line-height: 1.75; }
+    .tags { margin-top: 0.7rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-dim); border: 1px solid var(--rule); padding: 0.18rem 0.55rem; text-decoration: none; }
+    .tag:hover { color: var(--gold-hi); border-color: var(--gold-dim); }
+    .buy { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .buy a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.55rem 0.95rem; border: 1px solid var(--gold); color: var(--gold-hi); transition: background .2s, color .2s; }
+    .buy a:hover { background: var(--gold); color: var(--bg); }
+    .buy a.alt { border-color: var(--rule); color: var(--cream-mid); }
+    .buy a.alt:hover { background: var(--bg3); color: var(--cream); border-color: var(--gold-dim); }
+    .buy .sep { flex-basis: 100%; height: 0; }
+
+    .empty { padding: 3rem 0; color: var(--cream-dim); font-style: italic; }
+
+    footer { margin-top: auto; border-top: 1px solid var(--rule); padding: 2.5rem 0; }
+    .footer-note { font-size: 0.78rem; color: var(--cream-dim); line-height: 1.7; max-width: 520px; }
+    .footer-copy { font-size: 0.72rem; color: #4a4535; margin-top: 0.6rem; }
+
+    @media (max-width: 560px) {
+      .book { grid-template-columns: 64px 1fr; gap: 0.9rem; }
+      .cover { width: 64px; height: 96px; }
+      .cover.ph { font-size: 0.6rem; }
+      .book h2 { font-size: 1.08rem; }
+      .page-head { padding-top: 2.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <a class="brand" href="/">Jesus <em>for</em> Atheists</a>
+      <a class="back" href="/">&larr; Home</a>
+    </div>
+  </div>
+
+  <header class="page-head">
+    <div class="container">
+      <p class="eyebrow">Bookshelf</p>
+      <h1>Featured <em>Reference</em> Books, Publications and Articles</h1>
+      <p class="lede">Every episode draws on the work of scholars, historians and writers, and we think you'll enjoy them as much as we do. Browse the full collection here, or pick an episode to see just its sources. Borrow them, buy them, and read them for yourself.</p>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="container">
+      <div class="chips" id="chips" role="group" aria-label="Filter by episode"></div>
+      <div class="search"><input type="search" id="q" placeholder="Search title, author, or topic" aria-label="Search the bookshelf" /></div>
+    </div>
+  </div>
+
+  <main class="container">
+    <p class="disclosure" id="disclosure"></p>
+    <p class="ep-note" id="ep-note"></p>
+    <p class="count" id="count"></p>
+    <div class="list" id="list"></div>
+    <noscript><p class="empty">The bookshelf needs JavaScript to load. Sorry about that.</p></noscript>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-note">Bibliographic details are checked against library or publisher records before a book is added. Where scholars disagree, the show says so; the shelf does the same.</p>
+      <p class="footer-copy">&copy; 2026 Jesus for Atheists. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ──────────────────────────────────────────────────────────
+       AFFILIATE SETTINGS. Leave blank until the accounts exist.
+       When a value is filled in, links pick it up automatically
+       and the disclosure line appears at the top of the page.
+       ────────────────────────────────────────────────────────── */
+    const CONFIG = {
+      amazonTag: "",    // Amazon Associates tracking ID, e.g. "yourname-20"
+      bookshopId: ""    // Bookshop.org affiliate ID
+    };
+
+    const $ = (sel) => document.querySelector(sel);
+
+    function h(tag, attrs, ...kids) {
+      const el = document.createElement(tag);
+      for (const [k, v] of Object.entries(attrs || {})) {
+        if (v == null || v === false) continue;
+        if (k === "class") el.className = v;
+        else el.setAttribute(k, v);
+      }
+      for (const kid of kids.flat()) {
+        if (kid == null || kid === false) continue;
+        el.append(kid.nodeType ? kid : document.createTextNode(kid));
+      }
+      return el;
+    }
+
+    /* ISBN-13 (978 prefix) to ISBN-10. Amazon product URLs use the ISBN-10. */
+    function isbn10from13(isbn13) {
+      if (!/^978\d{10}$/.test(isbn13)) return null;
+      const body = isbn13.slice(3, 12);
+      let sum = 0;
+      for (let i = 0; i < 9; i++) sum += Number(body[i]) * (10 - i);
+      const check = (11 - (sum % 11)) % 11;
+      return body + (check === 10 ? "X" : String(check));
+    }
+
+    /* Every link is built from the ISBN-13. A book can override any of
+       them with a "links" object in books.json (useful for odd editions). */
+    function vendorLinks(b) {
+      const i13 = b.isbn13;
+      const i10 = b.isbn10 || isbn10from13(i13);
+      const o = b.links || {};
+
+      let amazon = o.amazon || (i10 ? `https://www.amazon.com/dp/${i10}` : `https://www.amazon.com/s?k=${i13}`);
+      if (CONFIG.amazonTag) {
+        const u = new URL(amazon);
+        u.searchParams.set("tag", CONFIG.amazonTag);
+        amazon = u.toString();
+      }
+
+      const bookshop = o.bookshop || (CONFIG.bookshopId
+        ? `https://bookshop.org/a/${encodeURIComponent(CONFIG.bookshopId)}/${i13}`
+        : `https://bookshop.org/book/${i13}`);
+
+      return {
+        buy: [
+          { label: "Amazon", href: amazon },
+          { label: "Barnes & Noble", href: o.bn || `https://www.barnesandnoble.com/s/${i13}` },
+          { label: "Bookshop.org", href: bookshop },
+          { label: "Goodreads", href: o.goodreads || `https://www.goodreads.com/book/isbn/${i13}` }
+        ],
+        alt: [
+          { label: "Borrow free (Open Library)", href: o.openlibrary || `https://openlibrary.org/isbn/${i13}` },
+          { label: "Find in a library (WorldCat)", href: o.worldcat || `https://www.worldcat.org/isbn/${i13}` }
+        ]
+      };
+    }
+
+    function surnameKey(b) {
+      if (b.sortAuthor) return b.sortAuthor.toLowerCase();
+      const first = b.author.split(/ and |,|&/)[0].trim();
+      return first.split(/\s+/).pop().toLowerCase();
+    }
+
+    function cover(b) {
+      const img = h("img", {
+        class: "cover",
+        src: `https://covers.openlibrary.org/b/isbn/${b.isbn13}-M.jpg?default=false`,
+        alt: `Cover of ${b.title}`,
+        loading: "lazy",
+        width: "84",
+        height: "126"
+      });
+      img.addEventListener("error", () => {
+        img.replaceWith(h("div", { class: "cover ph", "aria-hidden": "true" }, b.title));
+      });
+      return img;
+    }
+
+    function renderBook(b, episodes, onTag) {
+      const links = vendorLinks(b);
+      const orig = b.firstPublished && b.firstPublished !== b.year ? ` (first published ${b.firstPublished})` : "";
+      const imprint = [b.publisher, b.place].filter(Boolean).join(", ") + (b.year ? ` · ${b.year}` : "") + orig;
+
+      const buyRow = h("div", { class: "buy" },
+        links.buy.map(l => h("a", { href: l.href, target: "_blank", rel: "noopener sponsored" }, l.label)),
+        h("span", { class: "sep" }),
+        links.alt.map(l => h("a", { class: "alt", href: l.href, target: "_blank", rel: "noopener" }, l.label))
+      );
+
+      const tags = (b.episodes || []).map(n => {
+        const ep = episodes.find(e => e.number === n);
+        const a = h("a", { class: "tag", href: `?episode=${n}` }, `Ep ${n}${ep ? " · " + ep.title : ""}`);
+        a.addEventListener("click", (ev) => { ev.preventDefault(); onTag(n); });
+        return a;
+      });
+
+      return h("article", { class: "book" },
+        cover(b),
+        h("div", {},
+          h("h2", {}, b.title),
+          b.subtitle ? h("p", { class: "sub" }, b.subtitle) : null,
+          h("p", { class: "byline" }, b.author),
+          h("p", { class: "imprint" }, imprint),
+          h("p", { class: "summary" }, b.summary),
+          tags.length ? h("div", { class: "tags" }, tags) : null,
+          buyRow
+        )
+      );
+    }
+
+    async function init() {
+      let data;
+      try {
+        const res = await fetch("/books.json", { cache: "no-cache" });
+        data = await res.json();
+      } catch (e) {
+        $("#list").append(h("p", { class: "empty" }, "The bookshelf could not be loaded. Please try again in a moment."));
+        return;
+      }
+
+      const episodes = data.episodes || [];
+      const books = data.books || [];
+      const params = new URLSearchParams(location.search);
+      const state = { ep: params.get("episode") ? Number(params.get("episode")) : "all", q: "" };
+      if (state.ep !== "all" && !episodes.some(e => e.number === state.ep)) state.ep = "all";
+
+      /* disclosure appears only once an affiliate ID is set */
+      const parts = [];
+      if (CONFIG.amazonTag || CONFIG.bookshopId) {
+        parts.push("Some links on this page are affiliate links. If you buy through them, Jesus for Atheists may earn a small commission at no extra cost to you.");
+        if (CONFIG.amazonTag) parts.push("As an Amazon Associate, I earn from qualifying purchases.");
+        const d = $("#disclosure");
+        d.textContent = parts.join(" ");
+        d.style.display = "block";
+      }
+
+      function setEp(n) {
+        state.ep = n;
+        const url = new URL(location.href);
+        if (n === "all") url.searchParams.delete("episode"); else url.searchParams.set("episode", n);
+        history.replaceState(null, "", url);
+        draw();
+        window.scrollTo({ top: $("#chips").offsetTop - 12, behavior: "smooth" });
+      }
+
+      function drawChips() {
+        const box = $("#chips");
+        box.replaceChildren();
+        const mk = (label, value) => {
+          const b = h("button", { class: "chip", type: "button", "aria-pressed": String(state.ep === value) }, label);
+          b.addEventListener("click", () => setEp(value));
+          return b;
+        };
+        box.append(mk(`All books (${books.length})`, "all"));
+        episodes.forEach(e => {
+          const n = books.filter(b => (b.episodes || []).includes(e.number)).length;
+          box.append(mk(`Ep ${e.number} · ${e.title} (${n})`, e.number));
+        });
+      }
+
+      function draw() {
+        drawChips();
+        const q = state.q.trim().toLowerCase();
+        const shown = books
+          .filter(b => state.ep === "all" || (b.episodes || []).includes(state.ep))
+          .filter(b => !q || [b.title, b.subtitle, b.author, b.summary, b.publisher].filter(Boolean).join(" ").toLowerCase().includes(q))
+          .sort((a, b) => surnameKey(a).localeCompare(surnameKey(b)) || (a.year || 0) - (b.year || 0));
+
+        const ep = episodes.find(e => e.number === state.ep);
+        $("#ep-note").textContent = ep
+          ? `Books drawn on for Episode ${ep.number}, “${ep.title}.”${ep.status === "coming" ? " The episode is coming soon." : ""}`
+          : "";
+        $("#count").textContent = `${shown.length} ${shown.length === 1 ? "book" : "books"}`;
+
+        const list = $("#list");
+        list.replaceChildren();
+        if (!shown.length) {
+          list.append(h("p", { class: "empty" }, "Nothing matches that search."));
+          return;
+        }
+        shown.forEach(b => list.append(renderBook(b, episodes, setEp)));
+      }
+
+      $("#q").addEventListener("input", (e) => { state.q = e.target.value; draw(); });
+      draw();
+    }
+
+    init();
+  </script>
+
+</body>
+</html>
