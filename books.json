@@ -25,7 +25,8 @@
         "kindle": "https://www.amazon.com/dp/B005RBUKDE",
         "kobo": "https://www.kobo.com/ww/en/ebook/the-annals-the-reigns-of-tiberius-claudius-and-nero",
         "nook": "https://www.barnesandnoble.com/w/the-annals-tacitus/1116783960?ean=9781420962703",
-        "apple": "https://books.apple.com/us/book/the-annals/id474988247"
+        "apple": "https://books.apple.com/us/book/the-annals/id474988247",
+        "googleplay": "https://play.google.com/store/books/details/Cornelius_Tacitus_The_Annals?id=f4TuDWNmtFgC"
       },
       "skipStores": [
         "smashwords"
