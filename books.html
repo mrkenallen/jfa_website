@@ -95,6 +95,7 @@
     .byline { margin-top: 0.4rem; font-size: 0.9rem; color: var(--gold-hi); }
     .imprint { font-size: 0.8rem; color: var(--cream-dim); margin-top: 0.1rem; }
     .summary { margin-top: 0.7rem; font-size: 0.93rem; color: var(--cream-mid); line-height: 1.75; }
+    .format-note { margin-top: 0.5rem; font-size: 0.8rem; font-style: italic; color: var(--gold); }
     .tags { margin-top: 0.7rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tag { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-dim); border: 1px solid var(--rule); padding: 0.18rem 0.55rem; text-decoration: none; }
     .tag:hover { color: var(--gold-hi); border-color: var(--gold-dim); }
@@ -196,42 +197,79 @@
       return body + (check === 10 ? "X" : String(check));
     }
 
-    /* Every link is built from the ISBN-13. A book can override any of
-       them with a "links" object in books.json (useful for odd editions). */
+    function withAmazonTag(href) {
+      if (!CONFIG.amazonTag || !/amazon\./.test(href)) return href;
+      const u = new URL(href);
+      u.searchParams.set("tag", CONFIG.amazonTag);
+      return u.toString();
+    }
+
+    function bookshopLink(isbn) {
+      return CONFIG.bookshopId
+        ? `https://bookshop.org/a/${encodeURIComponent(CONFIG.bookshopId)}/${isbn}`
+        : `https://bookshop.org/book/${isbn}`;
+    }
+
+    /* Ebook stores, in display order. Each one uses a direct product link
+       from the book's "links" object in books.json when there is one, and
+       otherwise falls back to a title + author search on that store. */
+    const EBOOK_STORES = [
+      { key: "apple",      label: "Apple Books",
+        search: q => `https://www.google.com/search?q=${encodeURIComponent("site:books.apple.com " + q)}` },
+      { key: "kindle",     label: "Amazon Kindle",
+        search: q => `https://www.amazon.com/s?k=${encodeURIComponent(q)}&i=digital-text` },
+      { key: "nook",       label: "Barnes & Noble Nook",
+        search: q => `https://www.barnesandnoble.com/s/${encodeURIComponent(q + " NOOK Book")}` },
+      { key: "googleplay", label: "Google Play",
+        search: q => `https://play.google.com/store/search?q=${encodeURIComponent(q)}&c=books` },
+      { key: "kobo",       label: "Kobo",
+        search: q => `https://www.kobo.com/us/en/search?query=${encodeURIComponent(q)}&fcmedia=Book` },
+      { key: "ebookscom",  label: "eBooks.com",
+        search: q => `https://www.ebooks.com/en-us/searchapp/searchresults.net?term=${encodeURIComponent(q)}` },
+      { key: "smashwords", label: "Smashwords",
+        search: q => `https://www.smashwords.com/books/search?query=${encodeURIComponent(q)}` },
+      { key: "bookshop",   label: "Bookshop.org",
+        search: q => `https://bookshop.org/search?keywords=${encodeURIComponent(q)}` }
+    ];
+
+    /* Books with "ebook": true get the ebook stores. Anything else is
+       treated as print only and gets print links built from the ISBN-13.
+       A "skipStores" array in books.json hides stores known not to sell it. */
     function vendorLinks(b) {
       const i13 = b.isbn13;
       const i10 = b.isbn10 || isbn10from13(i13);
       const o = b.links || {};
+      const q = `${b.title} ${b.author}`;
 
-      let amazon = o.amazon || (i10 ? `https://www.amazon.com/dp/${i10}` : `https://www.amazon.com/s?k=${i13}`);
-      if (CONFIG.amazonTag) {
-        const u = new URL(amazon);
-        u.searchParams.set("tag", CONFIG.amazonTag);
-        amazon = u.toString();
+      let buy;
+      if (b.ebook === true) {
+        buy = EBOOK_STORES
+          .filter(s => !(b.skipStores || []).includes(s.key))
+          .map(s => ({ label: s.label, href: withAmazonTag(o[s.key] || s.search(q, b)) }));
+      } else {
+        buy = [
+          { label: "Amazon (print)", href: withAmazonTag(o.amazon || (i10 ? `https://www.amazon.com/dp/${i10}` : `https://www.amazon.com/s?k=${i13}`)) },
+          { label: "Barnes & Noble (print)", href: o.bn || `https://www.barnesandnoble.com/s/${i13}` },
+          { label: "Bookshop.org (print)", href: o.bookshopPrint || bookshopLink(i13) }
+        ];
       }
 
-      const bookshop = o.bookshop || (CONFIG.bookshopId
-        ? `https://bookshop.org/a/${encodeURIComponent(CONFIG.bookshopId)}/${i13}`
-        : `https://bookshop.org/book/${i13}`);
-
       return {
-        buy: [
-          { label: "Amazon", href: amazon },
-          { label: "Barnes & Noble", href: o.bn || `https://www.barnesandnoble.com/s/${i13}` },
-          { label: "Bookshop.org", href: bookshop },
-          { label: "Goodreads", href: o.goodreads || `https://www.goodreads.com/book/isbn/${i13}` }
-        ],
+        buy,
         alt: [
+          { label: "Goodreads", href: o.goodreads || `https://www.goodreads.com/book/isbn/${i13}` },
           { label: "Borrow free (Open Library)", href: o.openlibrary || `https://openlibrary.org/isbn/${i13}` },
           { label: "Find in a library (WorldCat)", href: o.worldcat || `https://www.worldcat.org/isbn/${i13}` }
         ]
       };
     }
 
-    function surnameKey(b) {
-      if (b.sortAuthor) return b.sortAuthor.toLowerCase();
-      const first = b.author.split(/ and |,|&/)[0].trim();
-      return first.split(/\s+/).pop().toLowerCase();
+    /* Alphabetical by title, ignoring a leading "The", "A" or "An"
+       (library style). Same titles fall back to the subtitle. */
+    const stripArticle = s => (s || "").toLowerCase().replace(/^(the|a|an)\s+/, "");
+    function byTitle(a, b) {
+      return stripArticle(a.title).localeCompare(stripArticle(b.title))
+          || stripArticle(a.subtitle).localeCompare(stripArticle(b.subtitle));
     }
 
     function cover(b) {
@@ -275,6 +313,9 @@
           h("p", { class: "byline" }, b.author),
           h("p", { class: "imprint" }, imprint),
           h("p", { class: "summary" }, b.summary),
+          b.ebook === true
+            ? (b.ebookNote ? h("p", { class: "format-note" }, b.ebookNote) : null)
+            : h("p", { class: "format-note" }, "Not available as an ebook. The links below are for the print edition."),
           tags.length ? h("div", { class: "tags" }, tags) : null,
           buyRow
         )
@@ -337,7 +378,7 @@
         const shown = books
           .filter(b => state.ep === "all" || (b.episodes || []).includes(state.ep))
           .filter(b => !q || [b.title, b.subtitle, b.author, b.summary, b.publisher].filter(Boolean).join(" ").toLowerCase().includes(q))
-          .sort((a, b) => surnameKey(a).localeCompare(surnameKey(b)) || (a.year || 0) - (b.year || 0));
+          .sort(byTitle);
 
         const ep = episodes.find(e => e.number === state.ep);
         $("#ep-note").textContent = ep
