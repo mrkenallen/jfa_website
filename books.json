@@ -74,7 +74,8 @@
         "kindle": "https://www.amazon.com/dp/B08XN7CQTB",
         "nook": "https://www.barnesandnoble.com/w/colonialism-and-its-forms-of-knowledge-bernard-s-cohn/1119782162",
         "apple": "https://books.apple.com/us/book/colonialism-and-its-forms-of-knowledge/id1555778356",
-        "googleplay": "https://play.google.com/store/books/details/Bernard_S_Cohn_Colonialism_and_Its_Forms_of_Knowle?id=QU0gEAAAQBAJ"
+        "googleplay": "https://play.google.com/store/books/details/Bernard_S_Cohn_Colonialism_and_Its_Forms_of_Knowle?id=QU0gEAAAQBAJ",
+        "kobo": "https://www.kobo.com/us/en/ebook/colonialism-and-its-forms-of-knowledge"
       },
       "skipStores": [
         "smashwords"
