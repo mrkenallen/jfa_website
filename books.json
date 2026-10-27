@@ -72,7 +72,8 @@
       "ebookIsbn13": "9781400844326",
       "links": {
         "kindle": "https://www.amazon.com/dp/B08XN7CQTB",
-        "nook": "https://www.barnesandnoble.com/w/colonialism-and-its-forms-of-knowledge-bernard-s-cohn/1119782162"
+        "nook": "https://www.barnesandnoble.com/w/colonialism-and-its-forms-of-knowledge-bernard-s-cohn/1119782162",
+        "apple": "https://books.apple.com/us/book/colonialism-and-its-forms-of-knowledge/id1555778356"
       },
       "skipStores": [
         "smashwords"
