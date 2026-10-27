@@ -28,7 +28,8 @@
         "apple": "https://books.apple.com/us/book/the-annals/id474988247",
         "googleplay": "https://play.google.com/store/books/details/Cornelius_Tacitus_The_Annals?id=f4TuDWNmtFgC",
         "ebookscom": "https://www.ebooks.com/en-us/book/415827/the-annals/cornelius-tacitus/",
-        "bookshop": "https://bookshop.org/p/books/the-annals-of-imperial-rome-cornelius-tacitus/a0ce1d46e14dc1cb?ean=9781420909371"
+        "bookshop": "https://bookshop.org/p/books/the-annals-of-imperial-rome-cornelius-tacitus/a0ce1d46e14dc1cb?ean=9781420909371",
+        "openlibrary": "https://openlibrary.org/books/OL10127618M/The_Annals"
       },
       "skipStores": [
         "smashwords"
