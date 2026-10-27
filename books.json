@@ -52,6 +52,9 @@
       "ebook": false,
       "episodes": [
         1
+      ],
+      "skipStores": [
+        "bn"
       ]
     },
     {

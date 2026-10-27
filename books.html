@@ -247,11 +247,12 @@
           .filter(s => !(b.skipStores || []).includes(s.key))
           .map(s => ({ label: s.label, href: withAmazonTag(o[s.key] || s.search(q, b)) }));
       } else {
+        /* Print stores can be hidden with skipStores too: "amazon", "bn", "bookshopPrint". */
         buy = [
-          { label: "Amazon (print)", href: withAmazonTag(o.amazon || (i10 ? `https://www.amazon.com/dp/${i10}` : `https://www.amazon.com/s?k=${i13}`)) },
-          { label: "Barnes & Noble (print)", href: o.bn || `https://www.barnesandnoble.com/s/${i13}` },
-          { label: "Bookshop.org (print)", href: o.bookshopPrint || bookshopLink(i13) }
-        ];
+          { key: "amazon", label: "Amazon (print)", href: withAmazonTag(o.amazon || (i10 ? `https://www.amazon.com/dp/${i10}` : `https://www.amazon.com/s?k=${i13}`)) },
+          { key: "bn", label: "Barnes & Noble (print)", href: o.bn || `https://www.barnesandnoble.com/s/${i13}` },
+          { key: "bookshopPrint", label: "Bookshop.org (print)", href: o.bookshopPrint || bookshopLink(i13) }
+        ].filter(s => !(b.skipStores || []).includes(s.key));
         if (o.publisher) buy.push({ label: "Publisher (print)", href: o.publisher });
       }
 
