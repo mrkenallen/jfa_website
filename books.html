@@ -252,6 +252,7 @@
           { label: "Barnes & Noble (print)", href: o.bn || `https://www.barnesandnoble.com/s/${i13}` },
           { label: "Bookshop.org (print)", href: o.bookshopPrint || bookshopLink(i13) }
         ];
+        if (o.publisher) buy.push({ label: "Publisher (print)", href: o.publisher });
       }
 
       return {
@@ -312,6 +313,7 @@
           h("p", { class: "byline" }, b.author),
           h("p", { class: "imprint" }, imprint),
           h("p", { class: "summary" }, b.summary),
+          b.note ? h("p", { class: "format-note" }, b.note) : null,
           b.ebook === true
             ? (b.ebookNote ? h("p", { class: "format-note" }, b.ebookNote) : null)
             : h("p", { class: "format-note" }, "Not available as an ebook. The links below are for the print edition."),

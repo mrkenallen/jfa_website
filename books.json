@@ -8,6 +8,71 @@
   ],
   "books": [
     {
+      "id": "tacitus-annals",
+      "title": "The Annals",
+      "subtitle": "The Reigns of Tiberius, Claudius, and Nero",
+      "author": "Tacitus",
+      "sortAuthor": "Tacitus",
+      "publisher": "Oxford University Press",
+      "place": "Oxford",
+      "year": 2008,
+      "isbn13": "9780192824219",
+      "summary": "A year-by-year Roman history of the Julio-Claudian emperors from the death of Augustus to the reign of Nero, covering court politics, provincial revolts, and the fire of Rome.",
+      "note": "Oxford World's Classics, translated by J. C. Yardley. The episode cites Annals 12.54.",
+      "ebook": true,
+      "ebookIsbn13": "9780191605031",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B005RBUKDE",
+        "kobo": "https://www.kobo.com/ww/en/ebook/the-annals-the-reigns-of-tiberius-claudius-and-nero"
+      },
+      "skipStores": [
+        "smashwords"
+      ],
+      "episodes": [
+        1
+      ]
+    },
+    {
+      "id": "cohn-anthropologist",
+      "title": "An Anthropologist Among the Historians and Other Essays",
+      "author": "Bernard S. Cohn",
+      "sortAuthor": "Cohn, Bernard S.",
+      "publisher": "Oxford University Press",
+      "place": "Delhi",
+      "year": 1990,
+      "firstPublished": 1987,
+      "isbn13": "9780195626162",
+      "summary": "A collection of essays on the methods and relationship of anthropology and history, applied chiefly to Indian society and British colonial rule.",
+      "ebook": false,
+      "episodes": [
+        1
+      ]
+    },
+    {
+      "id": "cohn-colonialism",
+      "title": "Colonialism and Its Forms of Knowledge",
+      "subtitle": "The British in India",
+      "author": "Bernard S. Cohn",
+      "sortAuthor": "Cohn, Bernard S.",
+      "publisher": "Princeton University Press",
+      "place": "Princeton",
+      "year": 1996,
+      "isbn13": "9780691000435",
+      "summary": "Argues that British efforts to collect and codify knowledge about Indian languages, law, history, objects, and dress were themselves instruments of colonial rule.",
+      "ebook": true,
+      "ebookIsbn13": "9781400844326",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B08XN7CQTB",
+        "nook": "https://www.barnesandnoble.com/w/colonialism-and-its-forms-of-knowledge-bernard-s-cohn/1119782162"
+      },
+      "skipStores": [
+        "smashwords"
+      ],
+      "episodes": [
+        1
+      ]
+    },
+    {
       "id": "caute-great-fear",
       "title": "The Great Fear",
       "subtitle": "The Anti-Communist Purge Under Truman and Eisenhower",
@@ -25,28 +90,64 @@
       "ebook": false
     },
     {
-      "id": "crossan-revolutionary-biography",
-      "title": "Jesus",
-      "subtitle": "A Revolutionary Biography",
-      "author": "John Dominic Crossan",
-      "publisher": "HarperOne",
-      "year": 2009,
-      "firstPublished": 1994,
-      "isbn13": "9780061800351",
-      "summary": "A historical reconstruction of Jesus's life and teaching, drawing on social-scientific study of first-century Mediterranean society.",
-      "episodes": [
-        1
-      ],
-      "sortAuthor": "Crossan, John Dominic",
+      "id": "scott-hear-then-the-parable",
+      "title": "Hear Then the Parable",
+      "subtitle": "A Commentary on the Parables of Jesus",
+      "author": "Bernard Brandon Scott",
+      "sortAuthor": "Scott, Bernard Brandon",
+      "publisher": "Fortress Press",
+      "place": "Minneapolis",
+      "year": 1989,
+      "isbn13": "9780800624811",
+      "summary": "Examines each of the parables of Jesus through literary and social-historical analysis, reconstructing their earliest forms and reading them against the social world of first-century Galilee.",
       "ebook": true,
-      "ebookIsbn13": "9780061978241",
+      "ebookIsbn13": "9781451404180",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B001E0R6P2"
+      },
       "skipStores": [
         "smashwords"
       ],
+      "episodes": [
+        1
+      ]
+    },
+    {
+      "id": "hachlili-jericho",
+      "title": "Jericho",
+      "subtitle": "The Jewish Cemetery of the Second Temple Period",
+      "author": "Rachel Hachlili and Ann E. Killebrew",
+      "sortAuthor": "Hachlili, Rachel",
+      "publisher": "Israel Antiquities Authority",
+      "place": "Jerusalem",
+      "year": 1999,
+      "isbn13": "9789654060349",
+      "summary": "The final excavation report on the Jewish cemetery at Jericho, documenting its rock-cut tombs, coffins, ossuaries, inscriptions and burial customs of the Second Temple period.",
+      "ebook": false,
       "links": {
-        "kindle": "https://www.amazon.com/dp/B002Q1YENA",
-        "googleplay": "https://play.google.com/store/books/details?id=nN9Ij_6n7TkC"
-      }
+        "publisher": "https://www.israelexplorationsociety.com/product-page/iaa-reports-7-jericho-the-jewish-cemetery-of-the-second-temple-period"
+      },
+      "episodes": [
+        1
+      ]
+    },
+    {
+      "id": "jeremias-jerusalem",
+      "title": "Jerusalem in the Time of Jesus",
+      "subtitle": "An Investigation into Economic and Social Conditions during the New Testament Period",
+      "author": "Joachim Jeremias",
+      "sortAuthor": "Jeremias, Joachim",
+      "publisher": "Fortress Press",
+      "place": "Philadelphia",
+      "year": 1969,
+      "firstPublished": 1923,
+      "isbn13": "9780800611361",
+      "summary": "A historical reconstruction of the economic and social structure of first-century Jerusalem, examining trade, wealth and poverty, the priesthood, lay aristocracy, scribes, Pharisees, and the maintenance of racial purity.",
+      "note": "The episode discusses this book as an example of the older reading it challenges, not as a source for its own argument.",
+      "ebook": false,
+      "episodes": [
+        1
+      ]
     },
     {
       "id": "ehrman-apocalyptic-prophet",
@@ -74,6 +175,30 @@
       }
     },
     {
+      "id": "crossan-revolutionary-biography",
+      "title": "Jesus",
+      "subtitle": "A Revolutionary Biography",
+      "author": "John Dominic Crossan",
+      "publisher": "HarperOne",
+      "year": 2009,
+      "firstPublished": 1994,
+      "isbn13": "9780061800351",
+      "summary": "A historical reconstruction of Jesus's life and teaching, drawing on social-scientific study of first-century Mediterranean society.",
+      "episodes": [
+        1
+      ],
+      "sortAuthor": "Crossan, John Dominic",
+      "ebook": true,
+      "ebookIsbn13": "9780061978241",
+      "skipStores": [
+        "smashwords"
+      ],
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B002Q1YENA",
+        "googleplay": "https://play.google.com/store/books/details?id=nN9Ij_6n7TkC"
+      }
+    },
+    {
       "id": "vermes-jesus-the-jew",
       "title": "Jesus the Jew",
       "subtitle": "A Historian's Reading of the Gospels",
@@ -97,6 +222,57 @@
         "kindle": "https://www.amazon.com/dp/B001DIWLS2",
         "nook": "https://www.barnesandnoble.com/w/jesus-the-jew-geza-vermes/1131590809"
       }
+    },
+    {
+      "id": "sanders-judaism",
+      "title": "Judaism",
+      "subtitle": "Practice and Belief, 63 BCE–66 CE",
+      "author": "E. P. Sanders",
+      "sortAuthor": "Sanders, E. P.",
+      "publisher": "Fortress Press",
+      "place": "Minneapolis",
+      "year": 2016,
+      "firstPublished": 1992,
+      "isbn13": "9781506406107",
+      "summary": "Argues that ordinary 'common Judaism'—Temple worship, sacrifice, purity, tithes and shared theology—rather than Pharisaic or rabbinic teaching defined Jewish religious life in Palestine between 63 BCE and 66 CE.",
+      "ebook": true,
+      "ebookIsbn13": "9781506408170",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B01K5V4EZ0",
+        "apple": "https://books.apple.com/us/book/judaism/id6748038566",
+        "nook": "https://www.barnesandnoble.com/w/judaism-e-p-sanders/1121001229",
+        "ebookscom": "https://www.ebooks.com/en-us/book/2658131/judaism/e-p-sanders/"
+      },
+      "skipStores": [
+        "smashwords"
+      ],
+      "episodes": [
+        1
+      ]
+    },
+    {
+      "id": "gordon-land-and-temple",
+      "title": "Land and Temple",
+      "subtitle": "Field Sacralization and the Agrarian Priesthood of Second Temple Judaism",
+      "author": "Benjamin D. Gordon",
+      "sortAuthor": "Gordon, Benjamin D.",
+      "publisher": "De Gruyter",
+      "place": "Berlin",
+      "year": 2022,
+      "firstPublished": 2020,
+      "isbn13": "9783110776706",
+      "summary": "Examines the Judean priesthood's involvement in agriculture and the consecration of fields to the Temple, arguing that Second Temple sacred space and priestly authority extended into farmland beyond the sanctuary.",
+      "ebook": true,
+      "ebookIsbn13": "9783110421163",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B01MXLA2RC"
+      },
+      "skipStores": [
+        "smashwords"
+      ],
+      "episodes": [
+        1
+      ]
     },
     {
       "id": "bacevich-limits-of-power",
@@ -149,6 +325,23 @@
         "kindle": "https://www.amazon.com/dp/B005PWSS98",
         "apple": "https://books.apple.com/us/book/luke-understanding-the-bible-commentary-series/id473936428"
       }
+    },
+    {
+      "id": "goulder-luke-new-paradigm",
+      "title": "Luke",
+      "subtitle": "A New Paradigm",
+      "author": "Michael D. Goulder",
+      "sortAuthor": "Goulder, Michael D.",
+      "publisher": "JSOT Press",
+      "place": "Sheffield",
+      "year": 1989,
+      "isbn13": "9781850751014",
+      "summary": "Argues that Luke composed his Gospel using Mark and Matthew rather than Q or a special L source, supported by a passage-by-passage commentary on the whole Gospel.",
+      "note": "Two volumes. Out of print; mostly available used.",
+      "ebook": false,
+      "episodes": [
+        1
+      ]
     },
     {
       "id": "borg-meeting-jesus",
@@ -219,6 +412,23 @@
       "ebook": false
     },
     {
+      "id": "brown-comfort-interlinear",
+      "title": "The New Greek/English Interlinear New Testament",
+      "author": "Robert K. Brown and Philip W. Comfort",
+      "sortAuthor": "Brown, Robert K.",
+      "publisher": "Tyndale House Publishers",
+      "place": "Carol Stream, IL",
+      "year": 2020,
+      "firstPublished": 1990,
+      "isbn13": "9781496443984",
+      "summary": "A Greek–English interlinear New Testament giving a word-for-word English translation beneath the UBS5/NA28 Greek text, with the New Revised Standard Version printed in a parallel column.",
+      "note": "The episode's reading of Luke 10:25–37 uses Robert K. Brown's interlinear English from this volume.",
+      "ebook": false,
+      "episodes": [
+        1
+      ]
+    },
+    {
       "id": "arendt-origins",
       "title": "The Origins of Totalitarianism",
       "author": "Hannah Arendt",
@@ -243,6 +453,49 @@
         "nook": "https://www.barnesandnoble.com/w/the-origins-of-totalitarianism-hannah-arendt/1100278208",
         "googleplay": "https://play.google.com/store/books/details?id=zLrKGGxBKjAC"
       }
+    },
+    {
+      "id": "funk-parables-presence",
+      "title": "Parables and Presence",
+      "subtitle": "Forms of the New Testament Tradition",
+      "author": "Robert W. Funk",
+      "sortAuthor": "Funk, Robert W.",
+      "publisher": "Fortress Press",
+      "place": "Philadelphia",
+      "year": 1982,
+      "isbn13": "9780800606886",
+      "summary": "A collection of essays on the literary forms of the New Testament tradition, chiefly the parables, including \"The Good Samaritan as Metaphor,\" on how their language involves the hearer.",
+      "ebook": false,
+      "episodes": [
+        1
+      ]
+    },
+    {
+      "id": "bailey-poet-peasant",
+      "title": "Poet & Peasant and Through Peasant Eyes",
+      "subtitle": "A Literary-Cultural Approach to the Parables in Luke",
+      "author": "Kenneth E. Bailey",
+      "sortAuthor": "Bailey, Kenneth E.",
+      "publisher": "Eerdmans",
+      "place": "Grand Rapids",
+      "year": 1983,
+      "firstPublished": 1980,
+      "isbn13": "9780802819475",
+      "summary": "Combines literary analysis of the poetic structure of Luke's parables with study of Middle Eastern peasant culture to reconstruct how their first hearers would have understood them.",
+      "note": "The episode cites Through Peasant Eyes (1980), now sold only in this combined edition.",
+      "ebook": true,
+      "ebookIsbn13": "9781467421997",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B001ECQKAM",
+        "apple": "https://books.apple.com/us/book/poet-peasant-and-through-peasant-eyes/id1614926759",
+        "nook": "https://www.barnesandnoble.com/w/poet-peasant-and-through-peasant-eyes-kenneth-e-bailey/1141755011"
+      },
+      "skipStores": [
+        "smashwords"
+      ],
+      "episodes": [
+        1
+      ]
     },
     {
       "id": "crossan-power-of-parable",
@@ -302,6 +555,30 @@
       }
     },
     {
+      "id": "pummer-samaritans",
+      "title": "The Samaritans",
+      "subtitle": "A Profile",
+      "author": "Reinhard Pummer",
+      "sortAuthor": "Pummer, Reinhard",
+      "publisher": "Eerdmans",
+      "place": "Grand Rapids",
+      "year": 2016,
+      "isbn13": "9780802867681",
+      "summary": "A survey of the Samaritans from antiquity to the present, covering the literary, epigraphic and archaeological sources, their history, their Pentateuch, their rituals and customs, and the community today.",
+      "ebook": true,
+      "ebookIsbn13": "9781467444064",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B01CHFD1I8",
+        "nook": "https://www.barnesandnoble.com/w/the-samaritans-reinhard-pummer/1121272984?ean=9781467444064"
+      },
+      "skipStores": [
+        "smashwords"
+      ],
+      "episodes": [
+        1
+      ]
+    },
+    {
       "id": "klein-shock-doctrine",
       "title": "The Shock Doctrine",
       "subtitle": "The Rise of Disaster Capitalism",
@@ -353,6 +630,29 @@
         "apple": "https://books.apple.com/us/book/short-stories-by-jesus/id660498271",
         "ebookscom": "https://www.ebooks.com/en-us/book/1213158/short-stories-by-jesus/amy-jill-levine/"
       }
+    },
+    {
+      "id": "seuss-sneetches",
+      "title": "The Sneetches and Other Stories",
+      "author": "Dr. Seuss",
+      "sortAuthor": "Seuss, Dr.",
+      "publisher": "Random House",
+      "place": "New York",
+      "year": 1961,
+      "isbn13": "9780394800899",
+      "summary": "A collection of four rhyming picture-book stories, including the title tale of star-bellied and plain-bellied creatures whose status distinctions are exploited and finally abandoned.",
+      "ebook": true,
+      "ebookIsbn13": "9780385373609",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B00ESF28YY",
+        "kobo": "https://www.kobo.com/us/en/ebook/the-sneetches-and-other-stories-1"
+      },
+      "skipStores": [
+        "smashwords"
+      ],
+      "episodes": [
+        1
+      ]
     },
     {
       "id": "reich-the-system",
@@ -408,6 +708,29 @@
         "googleplay": "https://play.google.com/store/books/details?id=AJKrMcOyQ3wC",
         "ebookscom": "https://www.ebooks.com/en-us/book/632754/what-s-the-matter-with-kansas/thomas-frank/"
       }
+    },
+    {
+      "id": "klein-why-polarized",
+      "title": "Why We're Polarized",
+      "author": "Ezra Klein",
+      "sortAuthor": "Klein, Ezra",
+      "publisher": "Avid Reader Press / Simon & Schuster",
+      "place": "New York",
+      "year": 2021,
+      "firstPublished": 2020,
+      "isbn13": "9781476700366",
+      "summary": "Argues that American political polarization stems from the sorting of party identities along racial, religious, and geographic lines, reinforced by media and political institutions.",
+      "ebook": true,
+      "ebookIsbn13": "9781476700397",
+      "links": {
+        "kindle": "https://www.amazon.com/dp/B085VB3TVL"
+      },
+      "skipStores": [
+        "smashwords"
+      ],
+      "episodes": [
+        1
+      ]
     }
   ]
 }
